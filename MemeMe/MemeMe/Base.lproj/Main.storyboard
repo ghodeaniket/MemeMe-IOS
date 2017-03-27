@@ -38,19 +38,27 @@
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="yJA-QY-vUt"/>
-                                    <barButtonItem systemItem="camera" id="LfK-pe-9Y9"/>
-                                    <barButtonItem title="Album" id="Hiq-5S-o15"/>
+                                    <barButtonItem systemItem="camera" id="LfK-pe-9Y9">
+                                        <connections>
+                                            <action selector="pickAnImage:" destination="BYZ-38-t0r" id="Y8o-12-JIj"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem tag="1" title="Album" id="Hiq-5S-o15">
+                                        <connections>
+                                            <action selector="pickAnImage:" destination="BYZ-38-t0r" id="Hj7-UH-wex"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="zeN-JQ-BNw"/>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KSa-VQ-ZlE">
-                                <rect key="frame" x="139" y="76" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KSa-VQ-ZlE">
+                                <rect key="frame" x="163" y="164" width="49" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VVm-xi-SS1">
-                                <rect key="frame" x="139" y="565" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VVm-xi-SS1">
+                                <rect key="frame" x="147" y="482" width="81" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
@@ -64,8 +72,8 @@
                             <constraint firstItem="6fG-OB-Z4b" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="NKD-ge-GNd"/>
                             <constraint firstItem="G2P-pS-rin" firstAttribute="leading" secondItem="nzu-Cq-frY" secondAttribute="leading" id="Psa-Wa-idz"/>
                             <constraint firstAttribute="trailing" secondItem="6fG-OB-Z4b" secondAttribute="trailing" id="QN1-bp-E5y"/>
-                            <constraint firstItem="VVm-xi-SS1" firstAttribute="top" secondItem="nzu-Cq-frY" secondAttribute="bottom" constant="-67" id="Uv5-uL-Fin"/>
-                            <constraint firstItem="nzu-Cq-frY" firstAttribute="top" secondItem="KSa-VQ-ZlE" secondAttribute="bottom" constant="-62" id="aQR-u6-8eh"/>
+                            <constraint firstItem="VVm-xi-SS1" firstAttribute="top" secondItem="nzu-Cq-frY" secondAttribute="bottom" constant="-150" id="Uv5-uL-Fin"/>
+                            <constraint firstItem="nzu-Cq-frY" firstAttribute="top" secondItem="KSa-VQ-ZlE" secondAttribute="bottom" constant="-150" id="aFs-2T-UVz"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6fG-OB-Z4b" secondAttribute="bottom" id="cqm-jA-NHg"/>
                             <constraint firstItem="nzu-Cq-frY" firstAttribute="top" secondItem="G2P-pS-rin" secondAttribute="bottom" id="dva-Q1-Tlm"/>
                             <constraint firstItem="nzu-Cq-frY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hws-Q0-QKD"/>
@@ -74,6 +82,12 @@
                             <constraint firstItem="G2P-pS-rin" firstAttribute="trailing" secondItem="nzu-Cq-frY" secondAttribute="trailing" id="zVZ-ch-cNl"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bottomTextField" destination="VVm-xi-SS1" id="IAS-Kn-W7N"/>
+                        <outlet property="cameraButton" destination="LfK-pe-9Y9" id="aZd-ge-vdG"/>
+                        <outlet property="imagePickerView" destination="nzu-Cq-frY" id="VcD-SE-ytp"/>
+                        <outlet property="topTextField" destination="KSa-VQ-ZlE" id="s18-9H-0hX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
