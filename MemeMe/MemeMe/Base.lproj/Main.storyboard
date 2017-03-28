@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E144f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,7 +26,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="MemeMe" id="hw3-78-vDp">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="jCM-UM-Blr"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="jCM-UM-Blr">
+                                            <connections>
+                                                <action selector="shareMeme:" destination="BYZ-38-t0r" id="Gjv-ft-mkE"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="pID-N2-q6b"/>
                                     </navigationItem>
                                 </items>
@@ -51,41 +56,48 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="zeN-JQ-BNw"/>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KSa-VQ-ZlE">
-                                <rect key="frame" x="163" y="164" width="49" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="745" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KSa-VQ-ZlE">
+                                <rect key="frame" x="24" y="164" width="327" height="30"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VVm-xi-SS1">
-                                <rect key="frame" x="147" y="482" width="81" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" borderStyle="roundedRect" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VVm-xi-SS1">
+                                <rect key="frame" x="24" y="482" width="327" height="30"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="KSa-VQ-ZlE" secondAttribute="trailing" constant="8" id="1jW-yE-e5a"/>
                             <constraint firstItem="VVm-xi-SS1" firstAttribute="centerX" secondItem="nzu-Cq-frY" secondAttribute="centerX" id="4Gw-tG-jLz"/>
                             <constraint firstAttribute="trailing" secondItem="nzu-Cq-frY" secondAttribute="trailing" id="9bH-eK-GYX"/>
                             <constraint firstItem="KSa-VQ-ZlE" firstAttribute="centerX" secondItem="nzu-Cq-frY" secondAttribute="centerX" id="Hud-1O-gcL"/>
                             <constraint firstItem="6fG-OB-Z4b" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="NKD-ge-GNd"/>
                             <constraint firstItem="G2P-pS-rin" firstAttribute="leading" secondItem="nzu-Cq-frY" secondAttribute="leading" id="Psa-Wa-idz"/>
                             <constraint firstAttribute="trailing" secondItem="6fG-OB-Z4b" secondAttribute="trailing" id="QN1-bp-E5y"/>
+                            <constraint firstItem="KSa-VQ-ZlE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="UA1-id-Id7"/>
                             <constraint firstItem="VVm-xi-SS1" firstAttribute="top" secondItem="nzu-Cq-frY" secondAttribute="bottom" constant="-150" id="Uv5-uL-Fin"/>
                             <constraint firstItem="nzu-Cq-frY" firstAttribute="top" secondItem="KSa-VQ-ZlE" secondAttribute="bottom" constant="-150" id="aFs-2T-UVz"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6fG-OB-Z4b" secondAttribute="bottom" id="cqm-jA-NHg"/>
                             <constraint firstItem="nzu-Cq-frY" firstAttribute="top" secondItem="G2P-pS-rin" secondAttribute="bottom" id="dva-Q1-Tlm"/>
                             <constraint firstItem="nzu-Cq-frY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hws-Q0-QKD"/>
+                            <constraint firstItem="VVm-xi-SS1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="jdS-0H-8pk"/>
                             <constraint firstItem="G2P-pS-rin" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="psY-xt-hI8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VVm-xi-SS1" secondAttribute="trailing" constant="8" id="qZX-eq-Qdl"/>
                             <constraint firstItem="6fG-OB-Z4b" firstAttribute="top" secondItem="nzu-Cq-frY" secondAttribute="bottom" constant="-9" id="sM0-kE-0F2"/>
                             <constraint firstItem="G2P-pS-rin" firstAttribute="trailing" secondItem="nzu-Cq-frY" secondAttribute="trailing" id="zVZ-ch-cNl"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="bottomTextField" destination="VVm-xi-SS1" id="IAS-Kn-W7N"/>
                         <outlet property="cameraButton" destination="LfK-pe-9Y9" id="aZd-ge-vdG"/>
                         <outlet property="imagePickerView" destination="nzu-Cq-frY" id="VcD-SE-ytp"/>
+                        <outlet property="navigationBar" destination="G2P-pS-rin" id="AL8-hX-IAI"/>
+                        <outlet property="toolbar" destination="6fG-OB-Z4b" id="mnK-lD-Gkb"/>
                         <outlet property="topTextField" destination="KSa-VQ-ZlE" id="s18-9H-0hX"/>
                     </connections>
                 </viewController>
