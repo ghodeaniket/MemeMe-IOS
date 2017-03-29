@@ -27,7 +27,7 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VVm-xi-SS1">
-                                <rect key="frame" x="24" y="523" width="327" height="30"/>
+                                <rect key="frame" x="24" y="573" width="327" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
@@ -50,7 +50,7 @@
                                 </items>
                             </toolbar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="745" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KSa-VQ-ZlE">
-                                <rect key="frame" x="24" y="164" width="327" height="30"/>
+                                <rect key="frame" x="24" y="84" width="327" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
@@ -68,9 +68,9 @@
                             <constraint firstItem="nzu-Cq-frY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Yjs-3a-IFe"/>
                             <constraint firstItem="nzu-Cq-frY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ZPu-Ou-5XR"/>
                             <constraint firstItem="KSa-VQ-ZlE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="mK4-qM-CKf"/>
-                            <constraint firstItem="nzu-Cq-frY" firstAttribute="top" secondItem="KSa-VQ-ZlE" secondAttribute="top" constant="-100" id="nvS-7u-lBe"/>
+                            <constraint firstItem="nzu-Cq-frY" firstAttribute="top" secondItem="KSa-VQ-ZlE" secondAttribute="bottom" constant="-50" id="nvS-7u-lBe"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6fG-OB-Z4b" secondAttribute="bottom" id="qmK-fn-Pf2"/>
-                            <constraint firstItem="VVm-xi-SS1" firstAttribute="top" secondItem="nzu-Cq-frY" secondAttribute="bottom" constant="-100" id="xEw-0c-yaP"/>
+                            <constraint firstItem="VVm-xi-SS1" firstAttribute="top" secondItem="nzu-Cq-frY" secondAttribute="bottom" constant="-50" id="xEw-0c-yaP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="RGY-XD-UgY">

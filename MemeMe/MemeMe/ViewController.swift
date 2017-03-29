@@ -12,7 +12,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
  
     //MARK: Buttons Tag
     enum TabBarButtons: Int {
-        case Camera = 0, Album
+        case camera = 0, album
     }
     
     //MARK:- Properties
@@ -80,9 +80,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         switch (TabBarButtons(rawValue: sender.tag)!) {
-        case .Camera:
+        case .camera:
             imagePicker.sourceType = .camera
-        case .Album:
+        case .album:
             imagePicker.sourceType = .photoLibrary
         }
         present(imagePicker, animated: true, completion: nil)
@@ -143,7 +143,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     func keyboardWillShow(_ notification: Notification) {
         if bottomTextField.isFirstResponder {
-            view.frame.origin.y -= getKeyboardHeight(notification)
+            view.frame.origin.y = -getKeyboardHeight(notification)
         }
     }
     
@@ -162,15 +162,15 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     //MARK:- Compose the meme with Image and texts
     
     struct Meme {
-        let topCaption: String!
-        let bottomCaption: String!
+        let topCaption: String
+        let bottomCaption: String
         let originalImage: UIImage!
         let memedImage: UIImage!
     }
     
     func saveMeme() {
         // Create the meme
-        _ = Meme(topCaption: topTextField.text, bottomCaption: bottomTextField.text, originalImage: imagePickerView.image, memedImage: generateMemedImage())
+        _ = Meme(topCaption: topTextField.text!, bottomCaption: bottomTextField.text!, originalImage: imagePickerView.image, memedImage: generateMemedImage())
     }
     
     func generateMemedImage() -> UIImage {
