@@ -17,12 +17,13 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     //MARK:- Properties
     
+    @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var toolbar: UIToolbar!
-    @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var imagePickerView: UIImageView!
+    @IBOutlet weak var navigationBar: UINavigationItem!
     var imagePicker: UIImagePickerController!
     
     // TextField TextAttributes
@@ -38,6 +39,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         super.viewDidLoad()
         configureTextFields(topTextField)
         configureTextFields(bottomTextField)
+        shareButton.isEnabled = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -86,6 +88,15 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         present(imagePicker, animated: true, completion: nil)
     }
     
+    // Reset the imageView and Strings from TextField.
+    @IBAction func cancelMeme(_ sender: Any) {
+        imagePickerView.image = nil
+        topTextField.isHidden = true
+        bottomTextField.isHidden = true
+        shareButton.isEnabled = false
+    }
+    
+    // Create Memed Image and provide it to the ActivityView Controller.
     @IBAction func shareMeme(_ sender: Any) {
         // Create the memedImage
         let memedImage = generateMemedImage()
@@ -109,6 +120,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         }
         topTextField.isHidden = false
         bottomTextField.isHidden = false
+        shareButton.isEnabled = true
         imagePicker.dismiss(animated: true, completion: nil)
     }
     
@@ -163,14 +175,14 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     func generateMemedImage() -> UIImage {
         //Hide navigation bar and toolbar
-        navigationBar.isHidden = true
+//        navigationBar.isHidden = true
         toolbar.isHidden = true
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
         let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         //Show navigation bar and toolbar
-        navigationBar.isHidden = false
+//        navigationBar.isHidden = false
         toolbar.isHidden = false
         return memedImage
     }
