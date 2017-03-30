@@ -19,25 +19,26 @@ class MemesCollectionViewController: UICollectionViewController {
     //MARK:- Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Create custom Flow Layout
-        let space: CGFloat = 3.0
-        let wDimension = (self.view.frame.size.width - (2*space)) / 3.0
-        let hDimension = (self.view.frame.size.height - (2*space)) / 3.0
-        flowLayout.minimumInteritemSpacing = space
-        flowLayout.minimumLineSpacing = space
-        flowLayout.itemSize = CGSize(width: wDimension, height: hDimension)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        // Create custom Flow Layout
+        let space: CGFloat = 3.0
+        let wDimension = (view.frame.size.width - (2*space)) / 3.0
+        let hDimension = (view.frame.size.height - (2*space)) / 3.0
+        flowLayout.minimumInteritemSpacing = space
+        flowLayout.minimumLineSpacing = space
+        flowLayout.itemSize = CGSize(width: wDimension, height: hDimension)
+        
         // Get the Memes from AppDelegate
         let delegate = UIApplication.shared.delegate as! AppDelegate
         memes = delegate.memes
-        self.collectionView!.reloadData()
+        collectionView!.reloadData()
     }
 
-    // MARK: UICollectionViewDataSource
+    // MARK: - UICollectionViewDataSource
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
@@ -51,4 +52,17 @@ class MemesCollectionViewController: UICollectionViewController {
     
         return cell
     }
+    
+    //MARK: - UICollectionViewDelegate
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedMeme = memes[indexPath.row]
+        
+        let detailsViewController = storyboard?.instantiateViewController(withIdentifier: "MemeDetailsViewController") as! MemeDetailsViewController
+        
+        detailsViewController.selectedMeme = selectedMeme
+        
+        navigationController?.pushViewController(detailsViewController, animated: true)
+    }
+    
 }

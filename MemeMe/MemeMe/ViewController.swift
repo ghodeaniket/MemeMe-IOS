@@ -46,12 +46,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         super.viewWillAppear(animated)
         // check if camera is available and enable/disable the camera button
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
-        self.subscribeToKeyboardNotification()
+        subscribeToKeyboardNotification()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.unsubscribeToKeyboardNotification()
+        unsubscribeToKeyboardNotification()
     }
     
     //MARK:- Helper Methods
@@ -90,7 +90,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     // Reset the imageView and Strings from TextField.
     @IBAction func cancelMeme(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     // Create Memed Image and provide it to the ActivityView Controller.
@@ -165,14 +165,14 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         delegate.memes.append(meme)
         
         // Dismiss the view controller
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     func generateMemedImage() -> UIImage {
         //Hide navigation bar and toolbar
         toolbar.isHidden = true
-        UIGraphicsBeginImageContext(self.view.frame.size)
-        view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.drawHierarchy(in: view.frame, afterScreenUpdates: true)
         let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         //Show navigation bar and toolbar
