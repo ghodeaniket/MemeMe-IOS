@@ -118,11 +118,11 @@
             </objects>
             <point key="canvasLocation" x="-2340" y="-99"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="S52-Rp-Ovo">
             <objects>
                 <navigationController id="Ui2-b2-Glm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="CVS-o8-wvt"/>
+                    <tabBarItem key="tabBarItem" title="" image="table" id="CVS-o8-wvt"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6N3-VB-BKe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -135,7 +135,7 @@
             </objects>
             <point key="canvasLocation" x="-1560" y="-232"/>
         </scene>
-        <!--Memes Table View Controller-->
+        <!--Sent Memes-->
         <scene sceneID="2Kq-Hg-UIo">
             <objects>
                 <tableViewController id="hXZ-Sh-2RE" customClass="MemesTableViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
@@ -187,7 +187,7 @@
                             <outlet property="delegate" destination="hXZ-Sh-2RE" id="Kn4-KF-uSx"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Zcn-rB-VRW">
+                    <navigationItem key="navigationItem" title="Sent Memes" id="Zcn-rB-VRW">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="klP-92-ET4">
                             <connections>
                                 <segue destination="veg-cS-JE0" kind="presentation" id="Ije-Gm-U7Y"/>
@@ -199,11 +199,11 @@
             </objects>
             <point key="canvasLocation" x="-704.79999999999995" y="-235.23238380809596"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="m8w-a3-dS2">
             <objects>
                 <navigationController id="jhX-XA-TLQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="9rg-wg-oQY"/>
+                    <tabBarItem key="tabBarItem" title="" image="collection" id="9rg-wg-oQY"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Ef-dV-onf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -216,7 +216,7 @@
             </objects>
             <point key="canvasLocation" x="-1546" y="474"/>
         </scene>
-        <!--Memes Collection View Controller-->
+        <!--Sent Memes-->
         <scene sceneID="U05-0c-sHW">
             <objects>
                 <collectionViewController id="bg1-6i-U4X" customClass="MemesCollectionViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
@@ -260,7 +260,7 @@
                             <outlet property="delegate" destination="bg1-6i-U4X" id="fCi-Ai-f2g"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="kIv-mq-DTU">
+                    <navigationItem key="navigationItem" title="Sent Memes" id="kIv-mq-DTU">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="3on-4v-5fj">
                             <connections>
                                 <segue destination="veg-cS-JE0" kind="presentation" id="7hs-oH-u3P"/>
@@ -294,6 +294,10 @@
             <point key="canvasLocation" x="367" y="139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="collection" width="30" height="30"/>
+        <image name="table" width="30" height="30"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="7hs-oH-u3P"/>
     </inferredMetricsTieBreakers>
