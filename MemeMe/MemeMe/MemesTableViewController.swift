@@ -10,23 +10,25 @@ import UIKit
 
 class MemesTableViewController: UITableViewController {
 
+    //MARK:- Properties
     var memes: [Meme]!
+    
+    //MARK:- Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        // Get the Memes from AppDelegate
         let delegate = UIApplication.shared.delegate as! AppDelegate
         memes = delegate.memes
-        print("memes count \(memes.count)")
         tableView.reloadData()
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return memes.count
     }
     
@@ -34,7 +36,7 @@ class MemesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "memeTableViewCell", for: indexPath) as! MemeTableViewCell
 
         let meme = memes[indexPath.row]
-        
+        // Create the custome description
         let memeDescription = "\(meme.topCaption)...\(meme.bottomCaption)"
         
         cell.memeDescription.text = memeDescription
