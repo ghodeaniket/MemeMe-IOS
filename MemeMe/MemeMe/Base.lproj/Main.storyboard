@@ -238,12 +238,17 @@
                                     <rect key="frame" x="0.0" y="0.0" width="147" height="147"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a59-ik-p6e">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a59-ik-p6e">
                                             <rect key="frame" x="0.0" y="8" width="147" height="131"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="a59-ik-p6e" secondAttribute="trailing" id="4WF-Gb-46p"/>
+                                    <constraint firstAttribute="bottom" secondItem="a59-ik-p6e" secondAttribute="bottom" id="UIz-Cx-QoO"/>
+                                    <constraint firstItem="a59-ik-p6e" firstAttribute="top" secondItem="RqA-SH-4Rg" secondAttribute="top" id="Urj-Jq-aQC"/>
+                                    <constraint firstItem="a59-ik-p6e" firstAttribute="leading" secondItem="RqA-SH-4Rg" secondAttribute="leading" id="n4u-zW-2S6"/>
+                                </constraints>
                                 <size key="customSize" width="147" height="147"/>
                                 <connections>
                                     <outlet property="memedImageView" destination="a59-ik-p6e" id="n3F-mv-DUu"/>
