@@ -12,6 +12,11 @@
 		25B410991E8913EA00495484 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25B410971E8913EA00495484 /* Main.storyboard */; };
 		25B4109B1E8913EA00495484 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25B4109A1E8913EA00495484 /* Assets.xcassets */; };
 		25B4109E1E8913EA00495484 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25B4109C1E8913EA00495484 /* LaunchScreen.storyboard */; };
+		25F6A4AA1E8D3B4C00B6724F /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F6A4A91E8D3B4C00B6724F /* Meme.swift */; };
+		25F6A4AC1E8D3C5A00B6724F /* MemesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F6A4AB1E8D3C5A00B6724F /* MemesTableViewController.swift */; };
+		25F6A4AE1E8D41A800B6724F /* MemeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F6A4AD1E8D41A800B6724F /* MemeTableViewCell.swift */; };
+		25F6A4B01E8D455100B6724F /* MemesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F6A4AF1E8D455100B6724F /* MemesCollectionViewController.swift */; };
+		25F6A4B21E8D455F00B6724F /* MemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F6A4B11E8D455F00B6724F /* MemeCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		25B4109A1E8913EA00495484 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		25B4109D1E8913EA00495484 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		25B4109F1E8913EA00495484 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		25F6A4A91E8D3B4C00B6724F /* Meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
+		25F6A4AB1E8D3C5A00B6724F /* MemesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemesTableViewController.swift; sourceTree = "<group>"; };
+		25F6A4AD1E8D41A800B6724F /* MemeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeTableViewCell.swift; sourceTree = "<group>"; };
+		25F6A4AF1E8D455100B6724F /* MemesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemesCollectionViewController.swift; sourceTree = "<group>"; };
+		25F6A4B11E8D455F00B6724F /* MemeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +70,11 @@
 				25B4109A1E8913EA00495484 /* Assets.xcassets */,
 				25B4109C1E8913EA00495484 /* LaunchScreen.storyboard */,
 				25B4109F1E8913EA00495484 /* Info.plist */,
+				25F6A4A91E8D3B4C00B6724F /* Meme.swift */,
+				25F6A4AB1E8D3C5A00B6724F /* MemesTableViewController.swift */,
+				25F6A4AD1E8D41A800B6724F /* MemeTableViewCell.swift */,
+				25F6A4AF1E8D455100B6724F /* MemesCollectionViewController.swift */,
+				25F6A4B11E8D455F00B6724F /* MemeCollectionViewCell.swift */,
 			);
 			path = MemeMe;
 			sourceTree = "<group>";
@@ -137,8 +152,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25F6A4B01E8D455100B6724F /* MemesCollectionViewController.swift in Sources */,
+				25F6A4AA1E8D3B4C00B6724F /* Meme.swift in Sources */,
 				25B410961E8913EA00495484 /* ViewController.swift in Sources */,
+				25F6A4AE1E8D41A800B6724F /* MemeTableViewCell.swift in Sources */,
+				25F6A4B21E8D455F00B6724F /* MemeCollectionViewCell.swift in Sources */,
 				25B410941E8913EA00495484 /* AppDelegate.swift in Sources */,
+				25F6A4AC1E8D3C5A00B6724F /* MemesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +322,7 @@
 				25B410A41E8913EA00495484 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

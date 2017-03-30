@@ -90,10 +90,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     // Reset the imageView and Strings from TextField.
     @IBAction func cancelMeme(_ sender: Any) {
-        imagePickerView.image = nil
-        topTextField.isHidden = true
-        bottomTextField.isHidden = true
-        shareButton.isEnabled = false
+        self.dismiss(animated: true, completion: nil)
     }
     
     // Create Memed Image and provide it to the ActivityView Controller.
@@ -159,30 +156,26 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         return keyboardSize.cgRectValue.height
     }
     
-    //MARK:- Compose the meme with Image and texts
-    
-    struct Meme {
-        let topCaption: String
-        let bottomCaption: String
-        let originalImage: UIImage!
-        let memedImage: UIImage!
-    }
-    
     func saveMeme() {
         // Create the meme
-        _ = Meme(topCaption: topTextField.text!, bottomCaption: bottomTextField.text!, originalImage: imagePickerView.image, memedImage: generateMemedImage())
+        let meme = Meme(topCaption: topTextField.text!, bottomCaption: bottomTextField.text!, originalImage: imagePickerView.image, memedImage: generateMemedImage())
+        
+        //Add it to memes array in AppDelegate
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        delegate.memes.append(meme)
+        
+        // Dismiss the view controller
+        self.dismiss(animated: true, completion: nil)
     }
     
     func generateMemedImage() -> UIImage {
         //Hide navigation bar and toolbar
-//        navigationBar.isHidden = true
         toolbar.isHidden = true
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
         let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         //Show navigation bar and toolbar
-//        navigationBar.isHidden = false
         toolbar.isHidden = false
         return memedImage
     }
